@@ -1,0 +1,82 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Book Recommender ApplicationAPI",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/submit-reading-interval": {
+            "post": {
+                "tags": [
+                    "Books"
+                ],
+                "summary": "Submit reading interval",
+                "operationId": "ec67521a997eb99443c7ea4bc714f499",
+                "requestBody": {
+                    "description": "User object that needs to be added to the system",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "user_id",
+                                    "book_id",
+                                    "start_page",
+                                    "end_page"
+                                ],
+                                "properties": {
+                                    "user_id": {
+                                        "description": "User Id",
+                                        "type": "string",
+                                        "example": "1"
+                                    },
+                                    "book_id": {
+                                        "description": "Book Id",
+                                        "type": "string",
+                                        "example": "1"
+                                    },
+                                    "start_page": {
+                                        "description": "Start Page",
+                                        "type": "integer",
+                                        "example": 2
+                                    },
+                                    "end_page": {
+                                        "description": "End Page",
+                                        "type": "integer",
+                                        "example": 12
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "interval submitted successfully"
+                    },
+                    "422": {
+                        "description": "wrong data"
+                    }
+                }
+            }
+        },
+        "/api/get-recommended-books": {
+            "get": {
+                "tags": [
+                    "Books"
+                ],
+                "summary": "Get a list of recommended books",
+                "operationId": "d63e0c58403bae1a23fe565e14d638e5",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Invalid request"
+                    }
+                }
+            }
+        }
+    }
+}
