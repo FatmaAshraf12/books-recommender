@@ -61,3 +61,8 @@ http://127.0.0.1:8000/api/documentation
 endpoint for submit reading interval : api/submit-reading-interval
 
 endpoint for Get Most Recommended Books : api/get-recommended-books
+
+
+## Api documentaion on real server 
+
+https://book-recommender.cloud/api/documentation
